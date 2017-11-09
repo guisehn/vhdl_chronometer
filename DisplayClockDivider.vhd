@@ -18,11 +18,11 @@ begin
   process (clock)
   begin
     if (clock'event and clock = '1') then
-	   counter <= counter + 1;
-		if counter = 1000 then
-		  counter <= 1;
-		  internal_clock <= not internal_clock;
-		end if;
+      counter <= counter + 1;
+      if counter = 1000 then
+        counter <= 1;
+        internal_clock <= not internal_clock;
+      end if;
     end if;
   end process;
 end Behavioral;

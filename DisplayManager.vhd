@@ -31,15 +31,15 @@ begin
       elsif (state = 1) then
         bcd <= hundreds;
         state <= 2;
-      displays <= "1011";
+        displays <= "1011";
       elsif (state = 2) then
         bcd <= tens;
         state <= 3;
-      displays <= "1101";
+        displays <= "1101";
       elsif (state = 3) then
         bcd <= ones;
         state <= 0;
-      displays <= "1110";
+        displays <= "1110";
       end if;
     end if;
   end process;

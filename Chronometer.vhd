@@ -55,10 +55,10 @@ begin
   process (start_button, pause_button)
   begin
     if pause_button = '1' then
-	   on_off <= '0';
-	 elsif start_button = '1' then
-	   on_off <= '1';
-	 end if;
+      on_off <= '0';
+    elsif start_button = '1' then
+      on_off <= '1';
+    end if;
   end process;
 
   ccd: entity work.CounterClockDivider
@@ -72,10 +72,10 @@ begin
 
   bcd: entity work.BCD
        port map (bits => count, ones => bcd_ones, tens => bcd_tens,
-		           hundreds => bcd_hundreds, thousands => bcd_thousands);
+                 hundreds => bcd_hundreds, thousands => bcd_thousands);
 
   dmul: entity work.DisplayManager
         port map (clock => display_clock, ones => bcd_ones, tens => bcd_tens,
-		            hundreds => bcd_hundreds, thousands => bcd_thousands,
-						segments => segments, displays => displays);
+                  hundreds => bcd_hundreds, thousands => bcd_thousands,
+                  segments => segments, displays => displays);
 end Behavioral;

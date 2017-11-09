@@ -21,7 +21,7 @@ begin
   begin
     if (clear = '1') then
       value <= INITIAL_VALUE;
-	  elsif (clock'event and clock = '1') then
+    elsif (clock'event and clock = '1') then
       if value = FINAL_VALUE then
         value <= INITIAL_VALUE;
       else

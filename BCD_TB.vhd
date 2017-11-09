@@ -1,30 +1,3 @@
---------------------------------------------------------------------------------
--- Company: 
--- Engineer:
---
--- Create Date:   20:59:46 11/07/2017
--- Design Name:   
--- Module Name:   C:/projetos_ise/Chronometer_m70326/BCD_TB.vhd
--- Project Name:  Chronometer_m70326
--- Target Device:  
--- Tool versions:  
--- Description:   
--- 
--- VHDL Test Bench Created by ISE for module: BCD
--- 
--- Dependencies:
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
---
--- Notes: 
--- This testbench has been automatically generated using types std_logic and
--- std_logic_vector for the ports of the unit under test.  Xilinx recommends
--- that these types always be used for the top-level I/O of a design in order
--- to guarantee that the testbench will bind correctly to the post-implementation 
--- simulation model.
---------------------------------------------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
  
@@ -74,11 +47,30 @@ BEGIN
  
    -- Stimulus process
    stim_proc: process
-   begin		
+   begin	
+		-- 9876
       bits <= "10011010010100";
 		wait for 5 ns;
+		
+		-- 320
+		bits <= "00000101000000";
+		wait for 5 ns;
 
-      -- insert stimulus here 
+		-- 741
+		bits <= "00001011100101";
+		wait for 5 ns;
+		
+		-- 3975
+		bits <= "00111110000111";
+		wait for 5 ns;
+
+		-- 5559
+		bits <= "01010110110111";
+		wait for 5 ns;
+
+		-- 2524
+		bits <= "00100111011100";
+		wait for 5 ns;
 
       wait;
    end process;

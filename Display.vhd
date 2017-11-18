@@ -10,35 +10,17 @@ end Display;
 
 architecture Behavioral of Display is
 begin
-  -- A
-  segments(0) <=
-    (bcd(0) and (not bcd(1)) and (not bcd(2)) and (not bcd(3)))
-    or ((not bcd(0)) and (not bcd(1)) and bcd(2) and (not bcd(3)));
-
-  -- B
-  segments(1) <= bcd(2) and (bcd(0) xor bcd(1));
-
-  -- C
-  segments(2) <= ((not bcd(0)) and bcd(1) and (not bcd(2)) and (not bcd(3)));
-
-  -- D
-  segments(3) <= (not bcd(3)) and (
-    (bcd(0) and (not bcd(1)) and (not bcd(2)))
-    or ((not bcd(0)) and (not bcd(1)) and bcd(2))
-    or (bcd(0) and bcd(1) and bcd(2))
-  );
-
-  -- E
-  segments(4) <= bcd(0) or (bcd(2) and (not bcd(1)));
-
-  -- F
-  segments(5) <=
-    (bcd(1) and (not bcd(2)))
-    or (bcd(0) and bcd(1))
-    or (bcd(0) and (not bcd(2)) and (not bcd(3)));
-
-  -- G
-  segments(6) <=
-    ((not bcd(1)) and (not bcd(2)) and (not bcd(3)))
-    or (bcd(0) and bcd(1) and bcd(2));
+  with bcd(3 downto 0) select
+    segments(0 to 6) <=
+      "0000001" when "0000", -- 0
+      "1001111" when "0001", -- 1
+      "0010010" when "0010", -- 2
+      "0000110" when "0011", -- 3
+      "1001100" when "0100", -- 4
+      "0100100" when "0101", -- 5
+      "0100000" when "0110", -- 6
+      "0001111" when "0111", -- 7
+      "0000000" when "1000", -- 8
+      "0000100" when "1001", -- 9
+      "1111111" when others;
 end Behavioral;

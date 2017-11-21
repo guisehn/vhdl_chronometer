@@ -10,7 +10,7 @@ entity CounterClockDivider is
 end CounterClockDivider;
 
 architecture Behavioral of CounterClockDivider is
-  signal counter : integer range 0 to 25000 := 1;
+  signal counter : integer range 0 to 25000 := 0;
   signal internal_clock : std_logic := '0';
 begin
   divided_clock <= internal_clock;

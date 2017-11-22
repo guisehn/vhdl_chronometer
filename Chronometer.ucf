@@ -1,19 +1,24 @@
-NET "clear_button" LOC = L13;
 NET "clock" LOC = T9;
-NET "display1" LOC = E13;
-NET "display2" LOC = F14;
-NET "display3" LOC = G14;
-NET "display4" LOC = D14;
-NET "pause_button" LOC = M14;
-NET "seg_a" LOC = E14;
-NET "seg_b" LOC = G13;
-NET "seg_c" LOC = N15;
-NET "seg_d" LOC = P15;
+
+NET "displays(0)" LOC = E13;
+NET "displays(1)" LOC = F14;
+NET "displays(2)" LOC = G14;
+NET "displays(3)" LOC = D14;
+
+NET "segments(0)" LOC = E14;
+NET "segments(1)" LOC = G13;
+NET "segments(2)" LOC = N15;
+NET "segments(3)" LOC = P15;
+NET "segments(4)" LOC = R16;
+NET "segments(5)" LOC = F13;
+NET "segments(6)" LOC = N16;
 NET "seg_dp" LOC = P16;
-NET "seg_e" LOC = R16;
-NET "seg_f" LOC = F13;
-NET "seg_g" LOC = N16;
-NET "start_button" LOC = M13;
+
+NET "start_button" LOC = F12;
+NET "pause_button" LOC = G12;
+NET "clear_button" LOC = H14;
+NET "slowdown_button" LOC = H13;
 
 NET "start_button" CLOCK_DEDICATED_ROUTE = FALSE;
 NET "pause_button" CLOCK_DEDICATED_ROUTE = FALSE;
+NET "slowdown_button" CLOCK_DEDICATED_ROUTE = FALSE;
